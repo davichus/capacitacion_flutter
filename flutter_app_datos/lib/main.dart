@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_datos/screens/home_screen.dart';
 import 'package:flutter_app_datos/screens/ingreso_datos_screen.dart';
+import 'package:flutter_app_datos/screens/login_screen.dart';
 import 'package:flutter_app_datos/screens/perfil_screen.dart';
 
 void main(){
@@ -16,12 +17,13 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: const IngresoDatosScreen(),
+      home: const LoginScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/inicio': (context) => const HomeScreen(),
         '/ingreso': (context) => const IngresoDatosScreen(),
-        '/perfil': (context) => const PerfilScreen()
+        '/perfil': (context) => const PerfilScreen(),
+        '/login': (context) => const LoginScreen()
       },
     );
   }

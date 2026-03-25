@@ -10,6 +10,8 @@ class Funciones {
       Navigator.pushNamed(context, '/ingreso');
     } else if (index == 3) {
       Navigator.pushNamed(context, '/perfil');
+    } else if (index == 4) {
+      Navigator.pushNamed(context, '/login');
     }
   }
 }

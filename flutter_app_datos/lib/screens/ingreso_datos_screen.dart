@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_datos/helpers/funciones.dart';
 import 'package:flutter_app_datos/screens/resumen_datos_screen.dart';
 import 'package:flutter_app_datos/widgest/custom_button_widget.dart';
+import 'package:flutter_app_datos/widgest/custom_navigation_bottom_widget.dart';
 import 'package:flutter_app_datos/widgest/custom_text_wdiget.dart';
 
 class IngresoDatosScreen extends StatefulWidget {
@@ -12,7 +14,14 @@ class IngresoDatosScreen extends StatefulWidget {
 
 class _IngresoDatosScreenState extends State<IngresoDatosScreen> {
   TextEditingController txtcontrolador = TextEditingController();
-
+  
+   int currentIndex = 1;
+   void onTabTapped(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+    Funciones.navegar(context, index);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +53,12 @@ class _IngresoDatosScreenState extends State<IngresoDatosScreen> {
                     },
                     texto: 'Enviar')
               ],
-            )));
+            )
+            ),
+            bottomNavigationBar: CustomNavigationBottomWidget(
+              currentIndex: currentIndex,
+              onTap: onTabTapped,
+            ),
+    );
   }
 }

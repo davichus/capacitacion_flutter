@@ -29,6 +29,10 @@ class CustomNavigationBottomWidget extends StatelessWidget{
             icon: Icon(Icons.settings),
             label: 'Perfil',
           ),
+         BottomNavigationBarItem(
+            icon: Icon(Icons.catching_pokemon),
+            label: 'Pokemon',
+          ),
            BottomNavigationBarItem(
             icon: Icon(Icons.exit_to_app),
             label: 'Salir',

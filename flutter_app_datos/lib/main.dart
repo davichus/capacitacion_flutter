@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_datos/controller/user_controller.dart';
+import 'package:flutter_app_datos/models/user_model.dart';
 import 'package:flutter_app_datos/screens/home_screen.dart';
 import 'package:flutter_app_datos/screens/ingreso_datos_screen.dart';
 import 'package:flutter_app_datos/screens/login_screen.dart';
@@ -6,18 +8,25 @@ import 'package:flutter_app_datos/screens/perfil_screen.dart';
 import 'package:flutter_app_datos/screens/pokemon_screen.dart';
 import 'package:flutter_app_datos/service/pokemon_service.dart';
 
-void main(){
+Future<void> main() async {
   runApp(const MyApp());
-  final service = PokemonService();
- /* try{
-    final pokemon = await service.getPokemon('pikachu');
-    print('Nombre: ${pokemon.name}');
-    print('Altura: ${pokemon.height}');
-    print('Peso: ${pokemon.weight}');
+  User user = User(
+    name: 'david navarrete', 
+    email: 'dnavarrete@itsjapon.edu.ec', 
+    password: '12334');
 
-  }catch(e) {
-      print('Error $e');
-  }*/
+    UserController userController = UserController();
+    try{
+      await userController.addUser(user);
+      List<User> lista = await userController.getAllUsers();
+      for(var i in lista){
+        print(i.name);
+        print(i.email);
+        print(i.password);
+      }
+    }catch (e){
+      print('erro: $e');
+    }
 }
 
 class MyApp extends StatelessWidget{

@@ -6,11 +6,12 @@ import 'package:flutter_app_datos/screens/ingreso_datos_screen.dart';
 import 'package:flutter_app_datos/screens/login_screen.dart';
 import 'package:flutter_app_datos/screens/perfil_screen.dart';
 import 'package:flutter_app_datos/screens/pokemon_screen.dart';
+import 'package:flutter_app_datos/screens/users_screens/user_list_screen.dart';
 import 'package:flutter_app_datos/service/pokemon_service.dart';
 
-Future<void> main() async {
+void main(){
   runApp(const MyApp());
-  User user = User(
+  /*User user = User(
     name: 'david navarrete', 
     email: 'dnavarrete@itsjapon.edu.ec', 
     password: '12334');
@@ -26,7 +27,7 @@ Future<void> main() async {
       }
     }catch (e){
       print('erro: $e');
-    }
+    }*/
 }
 
 class MyApp extends StatelessWidget{
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: const LoginScreen(),
+      home: const UserListScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/inicio': (context) => const HomeScreen(),

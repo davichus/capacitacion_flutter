@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_datos/controller/pokemon_controller.dart';
 import 'package:flutter_app_datos/helpers/funciones.dart';
 import 'package:flutter_app_datos/models/pokemon_model.dart';
-import 'package:flutter_app_datos/service/pokemon_service.dart';
 import 'package:flutter_app_datos/widgest/custom_button_widget.dart';
 import 'package:flutter_app_datos/widgest/custom_navigation_bottom_widget.dart';
 import 'package:flutter_app_datos/widgest/custom_text_wdiget.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_datos/controller/pokemon_controller.dart';
 import 'package:flutter_app_datos/helpers/funciones.dart';
 import 'package:flutter_app_datos/models/pokemon_model.dart';
 import 'package:flutter_app_datos/service/pokemon_service.dart';
@@ -14,7 +15,7 @@ class PokemonScreen extends StatefulWidget{
 }
 class _PokemonScreenState extends State<PokemonScreen>{
   final TextEditingController txtNameController = TextEditingController();
-  final PokemonService service = PokemonService();
+  final PokemonController controllerPokemnon = PokemonController();
 
   Pokemon? pokemon;
   bool isLoading = false;
@@ -35,7 +36,7 @@ class _PokemonScreenState extends State<PokemonScreen>{
     });
 
     try{
-      final result = await service.getPokemon(txtNameController.text);
+      final result = await controllerPokemnon.fetchPokemon(txtNameController.text);
       setState(() {
         pokemon = result;
       });

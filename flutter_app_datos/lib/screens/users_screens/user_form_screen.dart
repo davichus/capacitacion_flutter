@@ -66,13 +66,13 @@ class _UserFormScreenState extends State<UserFormScreen> {
                       TextField(
                   controller: txtEmailCtrl,
                   decoration: const InputDecoration(
-                      labelText: 'Ingrese su email', icon: Icon(Icons.person)),
+                      labelText: 'Ingrese su email', icon: Icon(Icons.email)),
                 ),
                 const SizedBox(height: 20),
                       TextField(
                   controller: txtPasswordCtrl,
                   decoration: const InputDecoration(
-                      labelText: 'Ingrese su contraseña', icon: Icon(Icons.person)),
+                      labelText: 'Ingrese su contraseña', icon: Icon(Icons.password)),
                 ),
                 const SizedBox(height: 20),
                 CustomButtonWidget(

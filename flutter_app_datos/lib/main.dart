@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_datos/controller/user_controller.dart';
+import 'package:flutter_app_datos/firebase_options.dart';
 import 'package:flutter_app_datos/models/user_model.dart';
 import 'package:flutter_app_datos/screens/home_screen.dart';
 import 'package:flutter_app_datos/screens/ingreso_datos_screen.dart';
@@ -9,7 +11,13 @@ import 'package:flutter_app_datos/screens/pokemon_screen.dart';
 import 'package:flutter_app_datos/screens/users_screens/user_list_screen.dart';
 import 'package:flutter_app_datos/service/pokemon_service.dart';
 
-void main(){
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+ 
   runApp(const MyApp());
   /*User user = User(
     name: 'david navarrete', 
@@ -44,7 +52,7 @@ class MyApp extends StatelessWidget{
       routes: {
         '/inicio': (context) => const HomeScreen(),
         '/ingreso': (context) => const IngresoDatosScreen(),
-        '/perfil': (context) => const PerfilScreen(),
+        '/perfil': (context) => const UserListScreen(),
         '/pokemon': (context) => const PokemonScreen(),
         '/login': (context) => const LoginScreen()
       },
